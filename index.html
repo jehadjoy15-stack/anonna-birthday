@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content=width=device-width, initial-scale=1.0>
+  <title>Happy Birthday Anonna! 🎉💖</title>
+  <meta name=description content=A magical, heartfelt birthday surprise created with love for Anonna.>
+  <meta name=theme-color content=#ff4d88>
+
+  <!-- Google Fonts -->
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Great+Vibes&display=swap rel=stylesheet>
+
+  <!-- Lucide Icons -->
+  <script src=https://cdn.jsdelivr.net/npm/lucide@0.383.0/dist/umd/lucide.min.js></script>
+
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+
+  <!-- FLOATING CANVASES -->
+  <canvas id=petalCanvas></canvas>
+  <div class=particles id=particles></div>
+
+  <!-- LOADING SCREEN -->
+  <div id=loader>
+    <div class=loader-heart-wrap>
+      <div class=loader-pulse-heart>❤️</div>
+      <div class=loader-sparkle>✨</div>
+    </div>
+    <div class=loader-text>Creating Something Magical for Anonna...</div>
+    <div class=loader-bar><div class=loader-fill></div></div>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class=auto-progress id=progressBar></div>
+
+  <!-- FLOATING MUSIC BUTTON -->
+  <button class=music-toggle id=musicBtn title=Play / Pause Romantic Music>
+    <div class=music-icon-wrap>
+      <i data-lucide=music class=music-note-icon></i>
+      <div class=music-bars>
+        <div class=music-bar></div>
+        <div class=music-bar></div>
+        <div class=music-bar></div>
+        <div class=music-bar></div>
+      </div>
+    </div>
+  </button>
+
+  <!-- NAV DOTS -->
+  <div class=nav-dots id=navDots></div>
+
+  <!-- LIGHTBOX -->
+  <div class=lightbox id=lightbox onclick=closeLightbox()>
+    <div class=lightbox-content onclick=event.stopPropagation()>
+      <img id="lightbox-img" src="assets/images/photo1.png" alt="Memory">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+ <!-- MAIN WRAPPER -->
+ <main>
+
+ <!-- 0: HERO SECTION -->
+ <section class=page-section hero visible data-section=Welcome id=sec-hero>
+ <div class=hero-container>
+ <div class=hero-avatar-frame>
+ <div class=avatar-halo></div>
+ <div class=avatar-ring></div>
+ <img class=hero-photo src=assets/images/hero.png alt=Anonna>
+ <div class=hero-crown>👑</div>
+ <div class=hero-sparkle-badge><i data-lucide=sparkles></i> Birthday Girl</div>
+ </div>
+
+ <div class=hero-badge>
+ <i data-lucide=heart class=icon-pulse></i> It's a Very Special Day!
+ </div>
+
+ <h1 class=hero-title>Happy Birthday<br><span class=name-gradient>Anonna!</span> 🎉</h1>
+ 
+ <p class=hero-sub>
+ <span>Wishing you the most magical, love-filled year ahead</span> <i data-lucide=sparkles class=icon-gold></i>
+ </p>
+
+ <div class=hero-actions>
+ <button class=nav-btn primary-glow onclick=goToSection(1)>
+ <span>Read Special Letter</span>
+ <i data-lucide=heart-handshake></i>
+ </button>
+ <button class=nav-btn secondary-btn onclick=goToSection(3)>
+ <span>Blow the Cake 🎂</span>
+ </button>
+ </div>
+ </div>
+ </section>
+
+ <!-- 1: SPECIAL LETTER PAGE (INTERACTIVE VINTAGE LETTER) -->
+ <section class=page-section letter-section data-section=Letter id=sec-letter>
+ <div class=section-header>
+ <h2 class=section-title>
+ <span class=title-icon><i data-lucide=mail-heart></i></span>
+ A Heartfelt Letter
+ </h2>
+ <p class=section-subtitle>Written especially from the deepest corner of the heart</p>
+ </div>
+
+ <!-- INTERACTIVE ENVELOPE / LETTER CONTAINER -->
+ <div class=letter-stage>
+ 
+ <!-- ENVELOPE PREVIEW STATE -->
+ <div class=envelope-box id=envelopeBox onclick=openLetter()>
+ <div class=envelope-flap></div>
+ <div class=envelope-pocket></div>
+ <div class=wax-seal>
+ <div class=wax-stamp>💌</div>
+ <span class=seal-glow></span>
+ </div>
+ <div class=envelope-text>
+ <span class=env-to>To: My Dearest Anonna 💖</span>
+ <span class=env-hint>✨ Tap to open the letter ✨</span>
+ </div>
+ </div>
+
+ <!-- OPENED REALISTIC LETTER DOCUMENT -->
+ <div class=parchment-letter id=parchmentLetter>
+ <div class=letter-pin-corner pin-tl>🌸</div>
+ <div class=letter-pin-corner pin-tr>✈️</div>
+
+ <div class=letter-header>
+ <div class=letter-stamp-art>
+ <span class=doodle-flight>✈️ ~ ~ ~ ♡</span>
+ </div>
+ <h3 class=letter-main-title>Happy Birthday My Girl <span class=hand-heart>💕</span></h3>
+ <div class=letter-decor-line>
+ <span>〰️〰️〰️〰️〰️〰️〰️〰️〰️</span>
+ </div>
+ </div>
+
+ <div class=letter-body-text>
+ <p class=handwritten-p>
+ Here's to another year of us laughing at our own jokes, dealing with stupid people &amp; keeping each other sane! 
+ If God allowed me to make a wish, I would ask to be by your side forever, for nothing makes me happier than to share with You beautiful and memorable moments for lifetime....
+ </p>
+
+ <p class=handwritten-p>
+ Through every crossroad, every celebratory moment, you've been there. I treasure our friendship more than words can express. 
+ On ur special day, I wish you nothing but love, joy and all the happiness in the world. You deserve it for being such a wonderful friend.
+ </p>
+
+ <p class=handwritten-p>
+ Thank you for ur friendship, ur patience, your protection, your caring nature, your ability to create the best memories. 
+ But most of all, thank you for being <strong>You</strong>. Also you are so lucky to have me in your life. 😉
+ </p>
+
+ <div class=letter-highlight-love>
+ LOVE YOU THE MOST
+ </div>
+ </div>
+
+ <!-- SIGNATURE & BADGES -->
+ <div class=letter-footer>
+ <div class=infinity-sign-box>
+ <div class=infinity-loop>
+ <span class=name-tag left-tag>Likki</span>
+ <span class=inf-symbol>♾️</span>
+ <span class=name-tag right-tag>Laddu</span>
+ <span class=plus-symbol>+</span>
+ </div>
+ </div>
+
+ <div class=watercolour-heart>
+ <span class=heart-art>❤️</span>
+ </div>
+
+ <div class=kraft-tag>
+ <div class=tag-pin></div>
+ <span class=tag-line-1>FRIENDS TODAY</span>
+ <span class=tag-line-2>SOULMATES FOREVER</span>
+ <span class=tag-dots>••••••• 🖤 •••••••</span>
+ </div>
+ </div>
+
+ <div class=letter-actions>
+ <button class=fold-btn onclick=toggleLetterMode()>
+ <i data-lucide=sparkles></i> <span>Re-fold Letter</span>
+ </button>
+ </div>
+ </div>
+
+ </div>
+
+ <div class=section-nav>
+ <button class=nav-btn onclick=goToSection(0)><i data-lucide=chevron-left></i> Back</button>
+ <button class=nav-btn primary-btn onclick=goToSection(2)>See Memories <i data-lucide=chevron-right></i></button>
+ </div>
+ </section>
+
+ <!-- 2: MEMORIES & PHOTO GALLERY -->
+ <section class=page-section data-section=Memories id=sec-photos>
+ <div class=section-header>
+ <h2 class=section-title>
+ <span class=title-icon><i data-lucide=camera></i></span>
+ Cherished Moments
+ </h2>
+ <p class=section-subtitle>Every photograph holds a million smiles &amp; priceless memories</p>
+ </div>
+
+ <div class=polaroid-gallery>
+ <!-- Photo 1: Hero Cafe Portrait -->
+ <div class=polaroid-card tilt-1 onclick=openLightbox('assets/images/photo1.png', 'That radiant smile that brightens up my whole world ✨')>
+ <div class=polaroid-tape tape-top></div>
+ <div class=polaroid-img-wrap>
+ <img src=assets/images/photo1.png alt=Anonna Smile loading=lazy>
+ <div class=polaroid-overlay><i data-lucide=zoom-in></i></div>
+ </div>
+ <div class=polaroid-caption>
+ <span class=caption-text>Radiant Smile 💖</span>
+ <span class=caption-tag>#Elegance</span>
+ </div>
+ </div>
+
+ <!-- Photo 2: Couple Special Highlight -->
+ <div class=polaroid-card tilt-2 highlight-polaroid onclick=openLightbox('assets/images/photo4.png', 'Together through every moment — Soulmates Forever 💑')>
+ <div class=polaroid-tape tape-heart>❤️</div>
+ <div class=polaroid-img-wrap>
+ <img src=assets/images/photo4.png alt=Likki & Laddu loading=lazy>
+ <div class=polaroid-overlay><i data-lucide=zoom-in></i></div>
+ </div>
+ <div class=polaroid-caption special-caption>
+ <span class=caption-text>Likki &amp; Laddu ♾️</span>
+ <span class=caption-tag>#Soulmates</span>
+ </div>
+ </div>
+
+ <!-- Photo 3: Rose Flower Aesthetic -->
+ <div class=polaroid-card tilt-3 onclick=openLightbox('assets/images/photo3.png', 'A rose for the most beautiful flower in my garden 🌹')>
+ <div class=polaroid-tape tape-top></div>
+ <div class=polaroid-img-wrap>
+ <img src=assets/images/photo3.png alt=Red Rose Beauty loading=lazy>
+ <div class=polaroid-overlay><i data-lucide=zoom-in></i></div>
+ </div>
+ <div class=polaroid-caption>
+ <span class=caption-text>Pure Elegance 🌹</span>
+ <span class=caption-tag>#FragranceOfLove</span>
+ </div>
+ </div>
+
+ <!-- Photo 4: Thumbs-up Cute Pose -->
+ <div class=polaroid-card tilt-4 onclick=openLightbox('assets/images/photo2.png', 'Always cute, always fun, and always making moments special! 👍')>
+ <div class=polaroid-tape tape-top></div>
+ <div class=polaroid-img-wrap>
+ <img src=assets/images/photo2.png alt=Cute Thumbs Up loading=lazy>
+ <div class=polaroid-overlay><i data-lucide=zoom-in></i></div>
+ </div>
+ <div class=polaroid-caption>
+ <span class=caption-text>Full of Life &amp; Joy 🌟</span>
+ <span class=caption-tag>#Cutie</span>
+ </div>
+ </div>
+
+ <!-- Photo 5: Sweet Portrait Selfie -->
+ <div class=polaroid-card tilt-5 onclick=openLightbox('assets/images/photo5.png', 'Irresistibly adorable — a one in a billion kind of special person 💕')>
+ <div class=polaroid-tape tape-top></div>
+ <div class=polaroid-img-wrap>
+ <img src=assets/images/photo5.png alt=Sweet Selfie loading=lazy>
+ <div class=polaroid-overlay><i data-lucide=zoom-in></i></div>
+ </div>
+ <div class=polaroid-caption>
+ <span class=caption-text>Forever Special 🌸</span>
+ <span class=caption-tag>#SweetMoments</span>
+ </div>
+ </div>
+ </div>
+
+ <div class=section-nav>
+ <button class=nav-btn onclick=goToSection(1)><i data-lucide=chevron-left></i> Back</button>
+ <button class=nav-btn primary-btn onclick=goToSection(3)>Make a Wish 🎂 <i data-lucide=chevron-right></i></button>
+ </div>
+ </section>
+
+ <!-- 3: INTERACTIVE CAKE & WISH BLOWING -->
+ <section class=page-section data-section=Cake id=sec-cake>
+ <div class=section-header>
+ <h2 class=section-title>
+ <span class=title-icon><i data-lucide=cake></i></span>
+ Make a Secret Wish!
+ </h2>
+ <p class=section-subtitle>Close your eyes, make the sweetest wish in your heart, and blow out the candles 🕯️</p>
+ </div>
+
+ <div class=cake-stage id=cakeStage>
+        <!-- LUXURY 3D CAKE -->
+        <div class="luxury-cake-container" id="cakeWrapper">
+          <div class="cake-sparkle-aura"></div>
+          
+          <!-- CANDLES ROW -->
+          <div class="candles-row" id="candlesRow">
+            <div class="candle c-1">
+              <div class="flame-glow"></div>
+              <div class="flame"><div class="flame-inner"></div></div>
+              <div class="smoke"></div>
+              <div class="candle-wick"></div>
+              <div class="candle-stick spiral-pink"></div>
+            </div>
+            <div class="candle c-2">
+              <div class="flame-glow"></div>
+              <div class="flame"><div class="flame-inner"></div></div>
+              <div class="smoke"></div>
+              <div class="candle-wick"></div>
+              <div class="candle-stick spiral-gold"></div>
+            </div>
+            <div class="candle c-3">
+              <div class="flame-glow"></div>
+              <div class="flame"><div class="flame-inner"></div></div>
+              <div class="smoke"></div>
+              <div class="candle-wick"></div>
+              <div class="candle-stick spiral-purple"></div>
+            </div>
+          </div>
+
+          <!-- CAKE TOPPER & TOP TIER -->
+          <div class="cake-tier tier-top">
+            <div class="cream-rosettes">
+              <span class="rosette">🍒</span>
+              <span class="rosette">🍓</span>
+              <span class="rosette">🍒</span>
+              <span class="rosette">🍓</span>
+            </div>
+            <div class="tier-drip-icing drip-top"></div>
+            <div class="tier-plaque">
+              <span class="plaque-text">✨ Anonna ✨</span>
+            </div>
+          </div>
+
+          <!-- MIDDLE TIER -->
+          <div class="cake-tier tier-middle">
+            <div class="tier-drip-icing drip-mid"></div>
+            <div class="pearl-beads">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="tier-tagline">🍓 Sweet &amp; Beautiful 🍓</div>
+          </div>
+
+          <!-- BOTTOM TIER -->
+          <div class="cake-tier tier-bottom">
+            <div class="tier-drip-icing drip-bot"></div>
+            <div class="bottom-ribbon">
+              <span>💖 Happy Birthday My Girl 💖</span>
+            </div>
+          </div>
+
+          <!-- ORNATE GOLD PEDESTAL STAND -->
+          <div class="cake-pedestal">
+            <div class="pedestal-plate"></div>
+            <div class="pedestal-stem"></div>
+            <div class="pedestal-base"></div>
+          </div>
+        </div>
+
+ <div class=wish-status-banner id=wishBanner>
+ <div class=banner-icon>✨🎉✨</div>
+ <div class=banner-title>Wish Sent to the Stars!</div>
+ <div class=banner-desc>May all your sweetest dreams come true, Anonna! 💖</div>
+ </div>
+
+ <div class=cake-controls>
+ <button class=blow-btn id=blowBtn onclick=blowCandles()>
+ <i data-lucide=wind></i>
+ <span>Blow the Candles!</span>
+ </button>
+ <button class=relight-btn id=relightBtn onclick=relightCandles() style=display:none;>
+ <i data-lucide=flame></i>
+ <span>Relight Candles</span>
+ </button>
+ </div>
+
+ </div>
+
+ <div class=section-nav>
+ <button class=nav-btn onclick=goToSection(2)><i data-lucide=chevron-left></i> Back</button>
+ <button class=nav-btn primary-btn onclick=goToSection(4)>Read Wishes <i data-lucide=chevron-right></i></button>
+ </div>
+ </section>
+
+ <!-- 4: HEARTFELT BIRTHDAY WISHES -->
+ <section class=page-section data-section=Wishes id=sec-wishes>
+ <div class=section-header>
+ <h2 class=section-title>
+ <span class=title-icon><i data-lucide=gift></i></span>
+ Warmest Wishes For You
+ </h2>
+ <p class=section-subtitle>Priceless blessings and prayers for your wonderful journey ahead</p>
+ </div>
+
+ <div class=wishes-grid>
+ <div class=wish-card>
+ <div class=wish-icon-badge color-pink><i data-lucide=sparkles></i></div>
+ <h4>Endless Joy</h4>
+ <p>May every single morning bring new reasons to smile, laugh out loud, and celebrate the beauty of life.</p>
+ </div>
+
+ <div class=wish-card>
+ <div class=wish-icon-badge color-gold><i data-lucide=crown></i></div>
+ <h4>Grand Success</h4>
+ <p>May all your goals and ambitions blossom into extraordinary victories. You have the power to achieve anything!</p>
+ </div>
+
+ <div class=wish-card>
+ <div class=wish-icon-badge color-purple><i data-lucide=heart-handshake></i></div>
+ <h4>Unconditional Love</h4>
+ <p>Surrounded by kindness, protection, and true companionship every step of your beautiful journey.</p>
+ </div>
+
+ <div class=wish-card>
+ <div class=wish-icon-badge color-teal><i data-lucide=sun></i></div>
+ <h4>Bright Horizons</h4>
+ <p>Like a warm ray of sunshine after rain, may your presence continue illuminating every soul around you.</p>
+ </div>
+
+ <div class=wish-card>
+ <div class=wish-icon-badge color-rose><i data-lucide=flower-2></i></div>
+ <h4>Inner Peace &amp; Health</h4>
+ <p>May you always be blessed with good health, serene thoughts, boundless energy, and true happiness.</p>
+ </div>
+
+ <div class=wish-card>
+ <div class=wish-icon-badge color-indigo><i data-lucide=infinity></i></div>
+ <h4>Forever &amp; Always</h4>
+ <p>No matter where life takes us, here is to a bond that only grows deeper, stronger, and more precious with time.</p>
+ </div>
+ </div>
+
+ <div class=section-nav>
+ <button class=nav-btn onclick=goToSection(3)><i data-lucide=chevron-left></i> Back</button>
+ <button class=nav-btn primary-glow onclick=goToSection(0)>Back to Top <i data-lucide=arrow-up></i></button>
+ </div>
+ </section>
+
+ <!-- FOOTER -->
+ <footer>
+ <div class=footer-content>
+ <p class=footer-main>
+ Crafted with endless <span class=footer-heart>❤️</span> for <strong>Anonna</strong>
+ </p>
+ <div class=footer-sub>
+ <span>Likki ∞ Laddu</span> • <span>Friends Today, Soulmates Forever</span>
+ </div>
+ <p class=footer-copy>✨ Happy Birthday Anonnaa! May your smile never fade ✨</p>
+ </div>
+ </footer>
+
+ </main>
+
+ <!-- BACKGROUND MUSIC -->
+ <audio id=bgMusic loop preload=auto>
+ <source src=https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f792cb.mp3?filename=romantic-piano-124977.mp3 type=audio/mpeg>
+ </audio>
+
+ <script src=main.js></script>
+</body>
+</html>
